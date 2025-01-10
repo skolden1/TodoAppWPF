@@ -6,8 +6,29 @@ using System.Threading.Tasks;
 
 namespace TodoAppWPF
 {
+
+    // <summary>
+    // hanterar logiken för att lägga till, ta bort o visa todo-items.
+    //</summary>
     public class TodoList
     {
+        private List<string> tasks = new List<string>();
 
+        public void AddTask(string task)
+        {
+            tasks.Add(task);
+        }
+        public void RemoveTask(int index)
+        {
+            if(index >= 0 && index < tasks.Count)
+            {
+                tasks.RemoveAt(index);
+            }
+            
+        }
+        public List<string> GetAllTasks()
+        {
+            return tasks;
+        }
     }
 }
