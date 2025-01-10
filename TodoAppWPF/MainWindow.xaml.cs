@@ -63,6 +63,27 @@ namespace TodoAppWPF
             }
         }
 
-        
+        private void EditButton_Click(object sender, RoutedEventArgs e)  //min egna
+        {
+            if(TasksListBox.SelectedIndex >= 0)
+            {
+                int selectedIndex = TasksListBox.SelectedIndex;
+                string newTask = TaskTextBox.Text;
+          
+                 _todoList.EditTask(selectedIndex, newTask);
+                TasksListBox.Items[selectedIndex] = newTask;
+
+                if (string.IsNullOrEmpty(newTask))
+                {
+                    TaskTextBox.Text = "Markera tasken o ändra texten här tryck sedan redigera igen.";
+                }
+                else
+                {
+                    TaskTextBox.Clear();
+                }
+
+
+            }
+        }
     }
 }

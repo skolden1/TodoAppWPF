@@ -36,5 +36,17 @@ namespace TestingToDoList
             var tasks = _todoList.GetAllTasks();
             Assert.Single(tasks);
         }
+
+        [Fact]
+        public void EditTask_ShouldChangeTextOnTask()
+        {
+            var task = "Task to edit";
+            _todoList.AddTask(task);
+            var changedTask = "Task ändring";
+            _todoList.EditTask(0, changedTask);
+            var tasks = _todoList.GetAllTasks();
+            Assert.Contains(changedTask, tasks);
+            Assert.DoesNotContain(task, tasks);
+        }
     }
 }

@@ -30,5 +30,19 @@ namespace TodoAppWPF
         {
             return tasks;
         }
+
+        //min egna
+        public void EditTask(int index, string newTaskText)
+        {
+            
+            if(index >= 0 && index < tasks.Count)
+            {
+                if (string.IsNullOrEmpty(newTaskText))
+                {
+                    newTaskText = "Ändra texten";
+                }
+                tasks[index] = newTaskText;
+            }
+        }
     }
 }
