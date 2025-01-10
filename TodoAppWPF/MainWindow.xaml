@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TodoAppWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="360" Width="552">
 
-    </Grid>
+    <Grid Margin="0,6,15,0" RenderTransformOrigin="0.476,0.41" Height="330" VerticalAlignment="Top">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="0.065"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="89*"/>
+            <ColumnDefinition Width="48*"/>
+            <ColumnDefinition Width="271*"/>
+            <ColumnDefinition Width="129*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox Name="TaskTextBox" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="400" Height="30" Grid.ColumnSpan="5"/>
+        <Button Name="AddButton" Content="Lägg till uppgift" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Height="30" Margin="0,10,0,0" Click="AddButton_Click" Grid.Column="4" Background="#FF6BD4B5"/>
+        <ListBox Name="TasksListBox" HorizontalAlignment="Left" Height="200" Margin="10,50,0,0" VerticalAlignment="Top" Width="480" Grid.ColumnSpan="5"/>
+        <Button Name="RemoveButton" Content="Ta bort uppgift" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Height="30" Margin="0,260,0,0" Click="RemoveButton_Click" Grid.Column="4" Background="#FF6BD4B5"/>    </Grid>
 </Window>
